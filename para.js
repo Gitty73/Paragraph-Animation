@@ -1,6 +1,7 @@
 var para = document.querySelector("p");
 var btn = document.querySelector("button");
 var stop = document.querySelector("#stop");
+var clicked = false;
 
 btn.addEventListener("click", function() {
   randomColor = randomColors();
@@ -10,9 +11,12 @@ btn.addEventListener("click", function() {
   btn.style.background = randomColor;
   stop.style.background = "";
   stop.textContent = "Stop It";
+  btn.textContent = "Click Me";
+  clicked = true;
 });
 
 stop.addEventListener("click", function() {
+  if(clicked){
   para.classList.remove("size");
   btn.style.background = "";
   para.style.color = "red";
@@ -20,6 +24,10 @@ stop.addEventListener("click", function() {
   stop.textContent = "Ha Ha Ha :)";
   btn.textContent = "Click Me Again";
   stop.style.background = "tomato";
+}
+else{
+  para.textContent = "First Click The 'Click Me' Button";
+}
 });
 
 function randomColors(){
