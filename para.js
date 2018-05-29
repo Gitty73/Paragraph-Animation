@@ -11,6 +11,7 @@ btn.addEventListener("click", function() {
   btn.style.background = randomColor;
   stop.style.background = "";
   stop.textContent = "Stop It";
+  btn.textContent = "Click Me";
   clicked = true;
 });
 
